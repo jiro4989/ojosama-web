@@ -1,0 +1,7 @@
+= ojosama-web
+:sectnums:
+:toc: left
+
+== デプロイ
+
+参考: https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml
