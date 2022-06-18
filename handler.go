@@ -20,7 +20,7 @@ func apiPostOjosama(c echo.Context) error {
 		return nil
 	}
 
-	result, err := ojosama.Convert(r.Text,nil)
+	result, err := ojosama.Convert(r.Text, nil)
 	if err != nil {
 		return err
 	}
