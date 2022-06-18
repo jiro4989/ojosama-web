@@ -84,7 +84,7 @@ go build
 ----
 heroku login
 heroku stack:set container
-git push heroku master
+git push heroku main
 ----
 
 === 参考
