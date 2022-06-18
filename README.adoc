@@ -2,18 +2,35 @@
 :sectnums:
 :toc: left
 
-== 前提条件
+テキストを壱百満天原サロメお嬢様風の口調に変換するWebアプリです。
 
+== 概要
+
+テキストを壱百満天原サロメお嬢様風に変換する自前のライブラリ
+https://github.com/jiro4989/ojosama[ojosama] を使って作ったWebアプリです。
+
+実行環境はHerokuです。以下URLからアクセスできます。
+
+* https://ojosama.herokuapp.com
+
+== 開発者向け
+
+=== 前提条件
+
+* Go 1.18.2
+* Ubuntu 22.04 on Docker
 * https://devcenter.heroku.com/ja/articles/heroku-cli[Heroku CLI]
 
-== 環境構築
+=== 環境構築
+
+Heroku CLIをセットアップします。
 
 [source,bash]
 ----
 curl https://cli-assets.heroku.com/install.sh | sh
 ----
 
-== デプロイ
+=== デプロイ
 
 [source,bash]
 ----
@@ -22,7 +39,7 @@ heroku stack:set container
 git push heroku master
 ----
 
-== 参考
+=== 参考
 
 * https://devcenter.heroku.com/ja/articles/git[Gitを使用したデプロイ]
 * https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml[heroku.ymlを使用してDockerイメージをビルドする]
