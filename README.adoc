@@ -2,6 +2,17 @@
 :sectnums:
 :toc: left
 
+== 前提条件
+
+* https://devcenter.heroku.com/ja/articles/heroku-cli[Heroku CLI]
+
+== 環境構築
+
+[source,bash]
+----
+curl https://cli-assets.heroku.com/install.sh | sh
+----
+
 == デプロイ
 
 参考: https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml
