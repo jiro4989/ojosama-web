@@ -8,7 +8,7 @@ import (
 )
 
 func pageGetRoot(c echo.Context) error {
-	return c.Render(http.StatusOK, "public/views/index.html", nil)
+	return c.Render(http.StatusOK, "index.html", nil)
 }
 
 func apiPostOjosama(c echo.Context) error {
