@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"io"
+	"net/http"
 	"os"
 
 	"github.com/labstack/echo/v4"
@@ -36,6 +37,11 @@ func main() {
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{http.MethodGet, http.MethodPost},
+	}))
+
 	e.GET("/", pageGetRoot)
 	e.POST("/api/ojosama", apiPostOjosama)
 
