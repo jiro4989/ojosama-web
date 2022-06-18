@@ -18,6 +18,8 @@ curl https://cli-assets.heroku.com/install.sh | sh
 [source,bash]
 ----
 heroku login
+heroku stack:set container
+git push heroku master
 ----
 
 参考: https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml
