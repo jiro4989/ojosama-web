@@ -15,4 +15,9 @@ curl https://cli-assets.heroku.com/install.sh | sh
 
 == デプロイ
 
+[source,bash]
+----
+heroku login
+----
+
 参考: https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml
