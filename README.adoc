@@ -13,6 +13,22 @@ https://github.com/jiro4989/ojosama[ojosama] を使って作ったWebアプリ�
 
 * https://ojosama.herokuapp.com
 
+== 使い方
+
+=== Web
+
+「入力」にテキスト入れて「変換」ボタンを押すだけです。
+
+=== API
+
+APIとしても使えるようにしてます。
+
+[source,bash]
+----
+$ curl -X POST -H 'Content-Type: application/json' -d '{"Text":"これはハーブです！"}' https://ojosama.herokuapp.com/api/ojosama
+{"Result":"これはおハーブですわ～！"}
+----
+
 == 開発者向け
 
 === 前提条件
@@ -20,6 +36,14 @@ https://github.com/jiro4989/ojosama[ojosama] を使って作ったWebアプリ�
 * Go 1.18.2
 * Ubuntu 22.04 on Docker
 * https://devcenter.heroku.com/ja/articles/heroku-cli[Heroku CLI]
+
+=== アプリ構成
+
+フロントは素のHTML＋JSだけで書いてます。
+バックエンドはGoの echo を使ってます。
+
+フロントからJSでAPIサーバに対してAPIリクエストを出して、結果を貼り付けてるだけです。
+なので、前述の通り API としても使える作りになってます。
 
 === 環境構築
 
