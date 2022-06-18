@@ -5,97 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>nimjson - Generates nim object definitions from json documents.</title>
+    <title>Ojosama web</title>
     <script>
-        function execute() {
-            const text = document.getElementById("jsonInputTextArea").value;
-            const publicField = document.getElementById("publicFieldCheckbox").checked;
-            const nimDef = generateNimDefinitions(text, publicField);
-            document.getElementById("nimDefOutputTextArea").value = nimDef;
-        }
+      function convert() {
+        const text = document.getElementById("jsonInputTextArea").value;
+        const publicField = document.getElementById("publicFieldCheckbox").checked;
+        const nimDef = generateNimDefinitions(text, publicField);
+        document.getElementById("nimDefOutputTextArea").value = nimDef;
+      }
     </script>
     <style>
-        body {
-            width: 100%;
-        }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #523244;
+}
 
-        .main-div {
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.app {
+  font-size: 18px;
+  font-family: sans-serif;
+}
 
-        textarea {
-            padding: 0.8em;
-            outline: none;
-            border: 1px solid #DDD;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
-            font-size: 16px;
-            width: 100%;
-        }
+header, footer {
+  background-color: #CD3896;
+  color: #fff;
+  text-align: center;
+}
 
-        .button {
-            background-color: #333;
-            border: 2px solid #333;
-            color: #fff;
-            line-height: 50px;
-            transition: all 300ms 0s ease;
-        }
+footer {
+  background-color: #523244;
+}
 
-        .button:hover,
-        .button:focus,
-        textarea:hover,
-        textarea:focus {
-            background-color: #fff;
-            border-color: #59b1eb;
-            color: #59b1eb;
-            transition: all 300ms 0s ease;
-        }
+section {
+  padding: 1%;
+  margin: 1%;
+  color: #fff;
+  border-radius: 2px;
+  background-color: #CD3896;
+}
 
-        h1 {
-            padding: .75em 0;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-        }
+textarea {
+  width: 100%;
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: #111111;
+  height: 20vh;
+}
 
-        h2 {
-            padding: .25em 0 .5em .75em;
-            border-left: 6px solid #ccc;
-            border-bottom: 1px solid #ccc;
-        }
+h1 {
+  margin: 0;
+  padding: 1%;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 1%;
+  font-family: fantasy, sans-serif;
+}
+
+.main-area {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60vw;
+}
+
+.button {
+  width: 30%;
+  height: 5vh;
+}
+
     </style>
 </head>
 
 <body>
-    <div class="main-div">
+  <div class="app">
+    <header>
+      <h1>Ojosama web</h1>
+      <p>テキストを壱百満天原サロメお嬢様風の口調に変換します</p>
+    </header>
+    <div class="main-area">
+      <section>
+        <h2>入力</h2>
+        <p>テキストを入力して「変換」ボタンを押すと、「出力」に結果が表示されます。</p>
         <div>
-            <h1>nimjson</h1>
-            <p>Generates nim object definitions from json documents.</p>
-            <hr>
+          <textarea id="input" name="" id=""></textarea>
         </div>
-        <div class="input-div">
-            <h2>Input</h2>
-            <p>Enter json string here. And press execute button.</p>
-            <div>
-                <textarea id="jsonInputTextArea" name="" id="" rows="20"></textarea>
-            </div>
-            <div style="padding: 10px 0px;">
-                <span>
-                    <label for="publicFieldCheckbox">
-                        <input id="publicFieldCheckbox" type="checkbox" name="public-field" value="true" />
-                        Public field
-                    </label>
-                </span>
-            </div>
-            <input class="button" type="button" value="Execute" onclick="execute();">
-        </div>
-        <div class="output-div">
-            <h2>Output</h2>
-            <textarea id="nimDefOutputTextArea" name="" id="" rows="20"></textarea>
-        </div>
+        <input class="button" type="button" value="変換" onclick="convert();">
+      </section>
+      <section>
+        <h2>出力</h2>
+        <textarea id="output" name="" id=""></textarea>
+      </section>
     </div>
+    <footer>
+      Copyright (C) 2022 <a href="https://github.com/jiro4989">jiro4989</a>
+      <a href="https://github.com/jiro4989/ojosama-web">
+        Web repository
+      </a>
+      <a href="https://github.com/jiro4989/ojosama">
+        Library repository
+      </a>
+    </footer>
+  </div>
 </body>
 
 </html>
