@@ -81,3 +81,7 @@ git push heroku master
 
 * https://devcenter.heroku.com/ja/articles/git[Gitを使用したデプロイ]
 * https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml[heroku.ymlを使用してDockerイメージをビルドする]
+
+=== その他
+
+デザインとかさっぱり分からないんで、UI改善PRをお待ちしてます・・・
