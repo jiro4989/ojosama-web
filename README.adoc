@@ -68,6 +68,16 @@ Heroku CLIをセットアップします。
 curl https://cli-assets.heroku.com/install.sh | sh
 ----
 
+=== ビルド
+
+以下のコマンドでビルドします。
+単体テストはありません。
+
+[source,bash]
+----
+go build
+----
+
 === デプロイ
 
 [source,bash]
