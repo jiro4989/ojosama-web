@@ -5,13 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ojosama web</title>
+    <title>Ojosama web converter</title>
     <script>
-      function convert() {
-        const text = document.getElementById("jsonInputTextArea").value;
-        const publicField = document.getElementById("publicFieldCheckbox").checked;
-        const nimDef = generateNimDefinitions(text, publicField);
-        document.getElementById("nimDefOutputTextArea").value = nimDef;
+      async function convert() {
+        document.getElementById("progress").innerHTML = "処理中";
+        const text = document.getElementById("input").value;
+        const data = {"Text": text}
+        const url = location.protocol + "//" + location.host + "/api/ojosama";
+        const resp = await fetch(url, {
+          method: "POST",
+          mode: 'cors',
+          headers: {
+            "Content-type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+        const result = await resp.json();
+        document.getElementById("output").value = result.Result;
+        // めちゃくちゃ雑なことしてる
+        progress.innerHTML = "変換完了！";
       }
     </script>
     <style>
@@ -90,7 +102,7 @@ a {
 <body>
   <div class="app">
     <header>
-      <h1>Ojosama web</h1>
+      <h1>Ojosama web converter</h1>
       <p>テキストを壱百満天原サロメお嬢様風の口調に変換します</p>
     </header>
     <div class="main-area">
@@ -104,7 +116,10 @@ a {
       </section>
       <section>
         <h2>出力</h2>
-        <textarea id="output" name="" id=""></textarea>
+        <p id="progress">ここに結果が表示されます。</p>
+        <div>
+          <textarea id="output" name="" id=""></textarea>
+        </div>
       </section>
     </div>
     <footer>
