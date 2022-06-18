@@ -3,10 +3,15 @@ package main
 import (
 	"html/template"
 	"io"
+	"os"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
+
+type Env struct {
+	Port string
+}
 
 type TemplateRenderer struct {
 	templates *template.Template
@@ -22,6 +27,7 @@ func (t *TemplateRenderer) Render(w io.Writer, name string, data interface{}, c 
 
 func main() {
 	e := echo.New()
+	env := newEnv()
 
 	r := &TemplateRenderer{
 		templates: template.Must(template.ParseGlob("public/views/*.html")),
@@ -33,5 +39,15 @@ func main() {
 	e.GET("/", pageGetRoot)
 	e.POST("/api/ojosama", apiPostOjosama)
 
-	e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start(":" + env.Port))
+}
+
+func newEnv() Env {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "1323"
+	}
+	return Env{
+		Port: port,
+	}
 }
