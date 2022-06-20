@@ -3,7 +3,7 @@ module github.com/jiro4989/ojosama-web
 go 1.18
 
 require (
-	github.com/jiro4989/ojosama v0.2.0
+	github.com/jiro4989/ojosama v0.3.0
 	github.com/labstack/echo/v4 v4.7.2
 )
 

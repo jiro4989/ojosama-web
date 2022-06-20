@@ -10,8 +10,8 @@ github.com/ikawaha/kagome-dict/ipa v1.0.4 h1:+vXHnhfgwNdm/DU4KrPaiRHO4zUht0w0iK4
 github.com/ikawaha/kagome-dict/ipa v1.0.4/go.mod h1:zpMcAFSLDYEq+UI3GnF3IcZE5a0rKB2J0rrKGY6HYW8=
 github.com/ikawaha/kagome/v2 v2.7.0 h1:8FSQwHKgDptbqpIPlLzYn1ekIAQwe2NJ6q6QfyXwlC4=
 github.com/ikawaha/kagome/v2 v2.7.0/go.mod h1:x7RC7TnFI5uOzxIPDcx9sJqV1vFE+3p+mJNcTVUGHjo=
-github.com/jiro4989/ojosama v0.2.0 h1:CzrLemUZ3CeDwA5VPXgVLM6PhE4NUuPyBjOstDE9szs=
-github.com/jiro4989/ojosama v0.2.0/go.mod h1:cMk4wAlxi38xprQx8blgTBJlt5Fiya9lkFOPjJK6csA=
+github.com/jiro4989/ojosama v0.3.0 h1:5X4PE7VgWBPwmaq+5tDTFIY1gvaQ0IxxJcDC7jJ5wiU=
+github.com/jiro4989/ojosama v0.3.0/go.mod h1:cMk4wAlxi38xprQx8blgTBJlt5Fiya9lkFOPjJK6csA=
 github.com/labstack/echo/v4 v4.7.2 h1:Kv2/p8OaQ+M6Ex4eGimg9b9e6icoxA42JSlOR3msKtI=
 github.com/labstack/echo/v4 v4.7.2/go.mod h1:xkCDAdFCIf8jsFQ5NnbK7oqaF/yU1A1X20Ltm0OvSks=
 github.com/labstack/gommon v0.3.1 h1:OomWaJXm7xR6L1HmEtGyQf26TEn7V6X88mktX9kee9o=
