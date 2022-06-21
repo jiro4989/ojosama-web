@@ -29,6 +29,10 @@ $ curl -X POST -H 'Content-Type: application/json' -d '{"Text":"これはハー�
 {"Result":"これはおハーブですわ～！"}
 ----
 
+API仕様は以下資料を確認してください。
+
+* https://jiro4989.github.io/ojosama-web/swagger.html
+
 == 注意事項
 
 === プログラムの使用について
