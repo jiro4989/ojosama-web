@@ -13,6 +13,13 @@ https://github.com/jiro4989/ojosama[ojosama] を使って作ったWebアプリ�
 
 * https://ojosama.herokuapp.com
 
+== 壱百満天原サロメお嬢様について
+
+以下を参照してください。
+
+* https://www.nijisanji.jp/members/salome-hyakumantenbara[壱百満天原サロメ - にじさんじ公式サイト]
+* https://twitter.com/1000000lome[壱百満天原サロメ - Twitter]
+
 == 使い方
 
 === Web
