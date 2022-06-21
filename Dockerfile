@@ -1,11 +1,13 @@
 FROM golang:1.18-alpine3.16 AS builder
 
 RUN apk update \
+ && apk add --no-cache git \
  && apk upgrade --no-cache
 
 COPY . /app
 WORKDIR /app
-RUN go build -o app
+RUN go build -o app \
+ && git rev-parse HEAD > revision.txt
 
 FROM alpine:3.16 AS runtime
 
@@ -15,4 +17,5 @@ RUN apk update \
 WORKDIR /app
 COPY --from=builder /app/app /app/app
 COPY --from=builder /app/public /app/public
+COPY --from=builder /app/revision.txt /app/revision.txt
 ENTRYPOINT ["/app/app"]

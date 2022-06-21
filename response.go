@@ -7,3 +7,8 @@ type ResponseOjosama struct {
 type ResponsePing struct {
 	Status string
 }
+
+type ResponseVersion struct {
+	StartAt string
+	Version string
+}
