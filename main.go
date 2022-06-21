@@ -44,6 +44,7 @@ func main() {
 
 	e.GET("/", pageGetRoot)
 	e.POST("/api/ojosama", apiPostOjosama)
+	e.GET("/api/ping", apiGetPing)
 
 	e.Logger.Fatal(e.Start(":" + env.Port))
 }

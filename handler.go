@@ -29,3 +29,8 @@ func apiPostOjosama(c echo.Context) error {
 	resp.Result = result
 	return c.JSON(http.StatusOK, resp)
 }
+
+func apiGetPing(c echo.Context) error {
+	resp := ResponsePing{Status: "OK"}
+	return c.JSON(http.StatusOK, resp)
+}
