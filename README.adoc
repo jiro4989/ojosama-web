@@ -50,6 +50,7 @@ $ curl -X POST -H 'Content-Type: application/json' -d '{"Text":"これはハー�
 * Go 1.18.2
 * Ubuntu 22.04 on Docker
 * https://devcenter.heroku.com/ja/articles/heroku-cli[Heroku CLI]
+* make
 
 === アプリ構成
 
@@ -75,7 +76,17 @@ curl https://cli-assets.heroku.com/install.sh | sh
 
 [source,bash]
 ----
-go build
+make
+----
+
+=== 疎通確認
+
+[source,bash]
+----
+make ping
+
+# herokuの方
+make ping ENV=prd
 ----
 
 === デプロイ
@@ -84,7 +95,7 @@ go build
 ----
 heroku login
 heroku stack:set container
-git push heroku main
+make deploy
 ----
 
 === 参考
