@@ -9,10 +9,12 @@ name: test
     paths-ignore:
       - README*
       - LICENSE
+      - docs/*
   pull_request:
     paths-ignore:
       - README*
       - LICENSE
+      - docs/*
 
 jobs:
   test:
