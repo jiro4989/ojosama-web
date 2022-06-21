@@ -3,7 +3,7 @@ module github.com/jiro4989/ojosama-web
 go 1.18
 
 require (
-	github.com/jiro4989/ojosama v0.3.0
+	github.com/jiro4989/ojosama v0.3.1
 	github.com/labstack/echo/v4 v4.7.2
 )
 
@@ -11,7 +11,7 @@ require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/ikawaha/kagome-dict v1.0.4 // indirect
 	github.com/ikawaha/kagome-dict/ipa v1.0.4 // indirect
-	github.com/ikawaha/kagome/v2 v2.7.0 // indirect
+	github.com/ikawaha/kagome/v2 v2.8.0 // indirect
 	github.com/labstack/gommon v0.3.1 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
