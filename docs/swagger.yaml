@@ -81,7 +81,7 @@ components:
         StartAt:
           description: アプリケーションの起動時刻を返す
           type: string
-        StartAt:
+        Version:
           description: バージョン情報を返す
           type: string
 
