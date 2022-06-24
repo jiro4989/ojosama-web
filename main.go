@@ -80,7 +80,7 @@ func newEnv() Env {
 func loadTemplates() (*template.Template, error) {
 	t := template.New("")
 	err := filepath.Walk("./public/views", func(path string, info os.FileInfo, err error) error {
-		if strings.HasSuffix(path, ".tmpl") {
+		if strings.HasSuffix(path, ".html") {
 			_, err = t.ParseFiles(path)
 			if err != nil {
 				return err

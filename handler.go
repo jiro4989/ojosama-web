@@ -21,7 +21,7 @@ func pageGetRoot(c echo.Context) error {
 		Title:       "Ojosama web converter",
 		Description: "テキストを壱百満天原サロメお嬢様風の口調に変換します。",
 	}
-	return c.Render(http.StatusOK, "index.html.tmpl", data)
+	return c.Render(http.StatusOK, "index.tmpl.html", data)
 }
 
 func pageGetTOS(c echo.Context) error {
@@ -29,7 +29,7 @@ func pageGetTOS(c echo.Context) error {
 		Title:       "利用規約 - Ojosama web converter",
 		Description: "利用規約です。アプリを使う際のお約束事を記載しています。",
 	}
-	return c.Render(http.StatusOK, "tos.html.tmpl", data)
+	return c.Render(http.StatusOK, "tos.tmpl.html", data)
 }
 
 func apiPostOjosama(c echo.Context) error {
