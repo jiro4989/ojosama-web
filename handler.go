@@ -11,12 +11,25 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+type Data struct {
+	Title       string
+	Description string
+}
+
 func pageGetRoot(c echo.Context) error {
-	return c.Render(http.StatusOK, "index.html", nil)
+	data := Data{
+		Title:       "Ojosama web converter",
+		Description: "テキストを壱百満天原サロメお嬢様風の口調に変換します。",
+	}
+	return c.Render(http.StatusOK, "index.tmpl.html", data)
 }
 
 func pageGetTOS(c echo.Context) error {
-	return c.Render(http.StatusOK, "tos.html", nil)
+	data := Data{
+		Title:       "利用規約 - Ojosama web converter",
+		Description: "利用規約です。アプリを使う際のお約束事を記載しています。",
+	}
+	return c.Render(http.StatusOK, "tos.tmpl.html", data)
 }
 
 func apiPostOjosama(c echo.Context) error {
