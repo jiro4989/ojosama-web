@@ -5,6 +5,8 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/labstack/echo/v4"
@@ -39,8 +41,13 @@ func main() {
 	e := echo.New()
 	env := newEnv()
 
+	t, err := loadTemplates()
+	if err != nil {
+		e.Logger.Fatal(err)
+	}
+
 	r := &TemplateRenderer{
-		templates: template.Must(template.ParseGlob("public/views/*.html")),
+		templates: t,
 	}
 	e.Renderer = r
 
@@ -68,4 +75,21 @@ func newEnv() Env {
 	return Env{
 		Port: port,
 	}
+}
+
+func loadTemplates() (*template.Template, error) {
+	t := template.New("")
+	err := filepath.Walk("./public/views", func(path string, info os.FileInfo, err error) error {
+		if strings.HasSuffix(path, ".tmpl") {
+			_, err = t.ParseFiles(path)
+			if err != nil {
+				return err
+			}
+		}
+		return nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	return t, nil
 }
