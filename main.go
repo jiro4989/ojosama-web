@@ -52,6 +52,7 @@ func main() {
 	}))
 
 	e.GET("/", pageGetRoot)
+	e.GET("/tos", pageGetTOS)
 	e.POST("/api/ojosama", apiPostOjosama)
 	e.GET("/api/ping", apiGetPing)
 	e.GET("/api/version", apiGetVersion)

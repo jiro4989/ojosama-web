@@ -15,6 +15,10 @@ func pageGetRoot(c echo.Context) error {
 	return c.Render(http.StatusOK, "index.html", nil)
 }
 
+func pageGetTOS(c echo.Context) error {
+	return c.Render(http.StatusOK, "tos.html", nil)
+}
+
 func apiPostOjosama(c echo.Context) error {
 	var r RequestPostOjosama
 	if err := c.Bind(&r); err != nil {
