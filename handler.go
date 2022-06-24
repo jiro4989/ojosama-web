@@ -26,8 +26,8 @@ func pageGetRoot(c echo.Context) error {
 
 func pageGetTOS(c echo.Context) error {
 	data := Data{
-		Title:       "Ojosama web converter利用規約",
-		Description: "アプリを使う際のお約束を記載しています。",
+		Title:       "利用規約 - Ojosama web converter",
+		Description: "利用規約です。アプリを使う際のお約束事を記載しています。",
 	}
 	return c.Render(http.StatusOK, "tos.html.tmpl", data)
 }
