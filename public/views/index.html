@@ -23,6 +23,27 @@
         const result = await resp.json();
         document.getElementById("output").value = result.Result;
         progress.innerHTML = "変換完了！";
+
+        activeTweetButton(result.Result !== "");
+      }
+
+      function tweet() {
+        const url = location.protocol + "//" + location.host;
+        const output = document.getElementById("output").value;
+        const message = `${output}\n\nOjosama web converter\n`;
+        const encodedMessage = encodeURIComponent(message);
+        const encodedURL = encodeURIComponent(url);
+        const tweetURL = "https://twitter.com/intent/tweet" + `?url=${encodedURL}&text=${encodedMessage}`;
+        window.open(tweetURL, "");
+      }
+
+      function activeTweetButton(active) {
+        const tweetButton = document.getElementById("tweet-button");
+        if (active === true) {
+          tweetButton.removeAttribute("disabled");
+        } else {
+          tweetButton.setAttribute("disabled");
+        }
       }
     </script>
     <style>
@@ -109,7 +130,7 @@ a {
         <h2>入力</h2>
         <p>テキストを入力して「変換」ボタンを押すと、「出力」に結果が表示されます。</p>
         <div>
-          <textarea id="input" name="" id="" placeholder="例: ハーブです！セーブはどこですか？汚いビデオテープですね"></textarea>
+          <textarea id="input" name="" placeholder="例: ハーブです！セーブはどこですか？汚いビデオテープですね"></textarea>
         </div>
         <input class="button" type="button" value="変換" onclick="convert();">
       </section>
@@ -117,8 +138,9 @@ a {
         <h2>出力</h2>
         <p id="progress">ここに結果が表示されます。</p>
         <div>
-          <textarea id="output" name="" id="" placeholder="例: おハーブですわ～❗❗セーブはどちらですの？きったねぇおビデオテープですわね"></textarea>
+          <textarea id="output" name="" placeholder="例: おハーブですわ～❗❗セーブはどちらですの？きったねぇおビデオテープですわね"></textarea>
         </div>
+        <input id="tweet-button" class="button" disabled type="button" value="ツイート" onclick="tweet();">
       </section>
     </div>
     <footer>
