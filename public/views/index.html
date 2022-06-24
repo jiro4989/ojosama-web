@@ -23,6 +23,27 @@
         const result = await resp.json();
         document.getElementById("output").value = result.Result;
         progress.innerHTML = "変換完了！";
+
+        activeTweetButton(result.Result !== "");
+      }
+
+      function tweet() {
+        const url = location.protocol + "//" + location.host;
+        const output = document.getElementById("output").value;
+        const message = `${output}\n\nOjosama web converter\n${url}`;
+        const encodedMessage = encodeURIComponent(message);
+        const encodedURL = encodeURIComponent(url);
+        const tweetURL = "https://twitter.com/intent/tweet" + `?url=${encodedURL}&text=${encodedMessage}`;
+        window.open(tweetURL, "");
+      }
+
+      function activeTweetButton(active) {
+        const tweetButton = document.getElementById("tweet-button");
+        if (active === true) {
+          tweetButton.removeAttribute("disabled");
+        } else {
+          tweetButton.setAttribute("disabled");
+        }
       }
     </script>
     <style>
@@ -119,6 +140,7 @@ a {
         <div>
           <textarea id="output" name="" placeholder="例: おハーブですわ～❗❗セーブはどちらですの？きったねぇおビデオテープですわね"></textarea>
         </div>
+        <input id="tweet-button" class="button" disabled type="button" value="ツイート" onclick="tweet();">
       </section>
     </div>
     <footer>
