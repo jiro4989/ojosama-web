@@ -6,7 +6,7 @@ else
 URL := $(DEV_URL)
 endif
 
-ojosama-web: go.* *.go
+ojosama-web: go.* *.go public/*
 	go vet .
 	go fmt .
 	go build .
