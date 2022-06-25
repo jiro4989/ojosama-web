@@ -42,6 +42,21 @@ API仕様は以下資料を確認してください。
 
 * https://jiro4989.github.io/ojosama-web/swagger.html
 
+== 動作環境
+
+最低限以下の環境で動作確認をしています。
+
+* PC
+** Google Chrome 最新
+* Android
+** Google Chrome 最新
+
+それ以外の環境は動作確認していませんが、
+素のHTMLとJSと単純なCSS設定しかしていないので多分動くと思います。(淡い期待)
+まぁ多少レイアウトが崩れていても変換機能は動くはずなので許してください。
+
+なお、Internet Explorerはサポート外です。
+
 == 注意事項
 
 === プログラムの使用について
