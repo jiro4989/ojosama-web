@@ -39,6 +39,7 @@ func main() {
 	startAt = time.Now().In(location)
 
 	e := echo.New()
+	e.Static("/assets", "public/assets")
 	env := newEnv()
 
 	t, err := loadTemplates()
