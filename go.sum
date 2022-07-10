@@ -20,6 +20,8 @@ github.com/jiro4989/ojosama v0.7.0 h1:zDLF8Awb2x0dg2E6FAwMgzbAIJ9l+RKHlsRBZTp0DF
 github.com/jiro4989/ojosama v0.7.0/go.mod h1:EgdFs69s+psuzAED6BJCv+fGOaW6+7mtwjU7hbErDbs=
 github.com/jiro4989/ojosama v0.8.0 h1:5CBJqPJAxfgBbYPkMNpbN2LVVmCpwtWBV75U9R5grBE=
 github.com/jiro4989/ojosama v0.8.0/go.mod h1:eSxpVrNculjmjd3E2GhOkyZ6GIQmoi4XV/4hvbOXpgM=
+github.com/jiro4989/ojosama v0.9.0 h1:HVUpRcSS7+cSHp4TtzkE3bKK29R1CGAfmsgr8Ngy2f8=
+github.com/jiro4989/ojosama v0.9.0/go.mod h1:eSxpVrNculjmjd3E2GhOkyZ6GIQmoi4XV/4hvbOXpgM=
 github.com/labstack/echo/v4 v4.7.2 h1:Kv2/p8OaQ+M6Ex4eGimg9b9e6icoxA42JSlOR3msKtI=
 github.com/labstack/echo/v4 v4.7.2/go.mod h1:xkCDAdFCIf8jsFQ5NnbK7oqaF/yU1A1X20Ltm0OvSks=
 github.com/labstack/gommon v0.3.1 h1:OomWaJXm7xR6L1HmEtGyQf26TEn7V6X88mktX9kee9o=
