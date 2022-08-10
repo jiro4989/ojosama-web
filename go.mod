@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/jiro4989/ojosama v0.10.0
-	github.com/labstack/echo/v4 v4.7.2
+	github.com/labstack/echo/v4 v4.8.0
 )
 
 require (
