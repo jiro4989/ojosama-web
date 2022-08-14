@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"io"
+	"math/rand"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -35,6 +36,8 @@ var (
 )
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
+
 	location := time.FixedZone("Asia/Tokyo", 9*60*60)
 	startAt = time.Now().In(location)
 
