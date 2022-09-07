@@ -27,7 +27,7 @@
     document.getElementById("progress").innerHTML = "処理中";
     const text = document.getElementById("input").value;
     const data = {"Text": text}
-    const url = location.protocol + "//" + location.host + "/api/ojosama";
+    const url = "https://api.ojosama.jiro4989.com/"
     const resp = await fetch(url, {
       method: "POST",
       mode: 'cors',
