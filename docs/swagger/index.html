@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ojosama web converter</title>
+  <link rel="stylesheet" href="/assets/styles/main.css" type="text/css">
+</head>
+
+
+<body>
+  <div class="app">
+    
+<header>
+  <h1><a href="/">Ojosama web converter</a></h1>
+  <p>テキストを壱百満天原サロメお嬢様風の口調に変換します。</p>
+</header>
+
+    <div class="main-area">
+
+<script>
+  async function convert() {
+    document.getElementById("progress").innerHTML = "処理中";
+    const text = document.getElementById("input").value;
+    const data = {"Text": text}
+    const url = location.protocol + "//" + location.host + "/api/ojosama";
+    const resp = await fetch(url, {
+      method: "POST",
+      mode: 'cors',
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+    const result = await resp.json();
+    document.getElementById("output").value = result.Result;
+    progress.innerHTML = "変換完了！";
+
+    activeTweetButton(result.Result !== "");
+  }
+
+  function tweet() {
+    const url = location.protocol + "//" + location.host;
+    const output = document.getElementById("output").value;
+    const message = `${output}\n\nOjosama web converter\n`;
+    const encodedMessage = encodeURIComponent(message);
+    const encodedURL = encodeURIComponent(url);
+    const tweetURL = "https://twitter.com/intent/tweet" + `?url=${encodedURL}&text=${encodedMessage}`;
+    window.open(tweetURL, "");
+  }
+
+  function activeTweetButton(active) {
+    const tweetButton = document.getElementById("tweet-button");
+    if (active === true) {
+      tweetButton.removeAttribute("disabled");
+    } else {
+      tweetButton.setAttribute("disabled");
+    }
+  }
+</script>
+
+<section>
+  <h2>入力</h2>
+  <p>テキストを入力して「変換」ボタンを押すと、「出力」に結果が表示されます。</p>
+  <div>
+    <textarea id="input" name="" placeholder="例: ハーブです！セーブはどこですか？"></textarea>
+  </div>
+  <input id="convert-button" class="button" type="button" value="変換" onclick="convert();">
+</section>
+<section>
+  <h2>出力</h2>
+  <p id="progress">ここに結果が表示されます。</p>
+  <div>
+    <textarea id="output" name="" placeholder="例: おハーブですわ～❗❗セーブはどちらですの？" readonly></textarea>
+  </div>
+  <input id="tweet-button" class="button" disabled type="button" value="ツイート" onclick="tweet();">
+</section>
+
+    </div>
+    
+<footer>
+  <span>
+    Copyright (C) 2022 <a href="https://github.com/jiro4989">jiro4989</a> |
+    <a href="/tos">利用規約</a> |
+    Source code :
+    <a href="https://github.com/jiro4989/ojosama-web">Web</a> /
+    <a href="https://github.com/jiro4989/ojosama">Library</a>
+  </span>
+</footer>
+
+  </div>
+</body>
+
+</html>
+
