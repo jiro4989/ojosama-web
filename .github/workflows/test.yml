@@ -8,13 +8,15 @@ name: test
       - main
     paths-ignore:
       - README*
-      - LICENSE
       - docs/*
+      - ojosama-assets/*
+      - buildspec.yml
   pull_request:
     paths-ignore:
       - README*
-      - LICENSE
       - docs/*
+      - ojosama-assets/*
+      - buildspec.yml
 
 jobs:
   test:
@@ -23,6 +25,7 @@ jobs:
       matrix:
         go:
           - '1.18'
+          - '1.19'
           - '1.x'
     steps:
       - uses: actions/checkout@v3
