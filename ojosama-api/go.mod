@@ -1,4 +1,4 @@
-module aws/codestar/projecttemplates/main
+module github.com/jiro4989/ojosama-web/ojosama-api
 
 go 1.18
 
