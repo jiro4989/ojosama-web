@@ -26,5 +26,5 @@ phases:
 
   post_build:
     commands:
-      - aws s3 cp "./${SOURCE_NAME}" "s3://${S3_BUCKET}/"
-      - aws lambda update-function-code --function-name ojosama --s3-bucket "${S3_BUCKET}" --s3-key "${SOURCE_NAME}"
+      - aws s3 cp "./${SOURCE_NAME}" "s3://${S3_BUCKET_LAMBDA}/"
+      - aws lambda update-function-code --function-name ojosama --s3-bucket "${S3_BUCKET_LAMBDA}" --s3-key "${SOURCE_NAME}"
