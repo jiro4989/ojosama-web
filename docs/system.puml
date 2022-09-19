@@ -1,0 +1,35 @@
+@startuml
+
+actor ユーザ as u
+actor 開発者 as dev
+cloud AWS {
+  package ユーザがアクセスする領域 {
+    [CloudFront] as cf
+    database S3 as s3
+    [Route53] as r53
+    [API Gateway] as apigw
+    [Lambda] as l
+  }
+  package デプロイ機構 {
+    [CodePipeline] as pipe
+    [Codebuild] as build
+  }
+}
+node GitHub as gh
+
+r53 -[hidden]right- l
+
+u -down-> r53 : 名前解決
+u -down-> cf : GET index.html
+cf -down-> s3
+u -down-> apigw : POST /
+apigw -down-> l : Lambdaプロキシ
+
+dev -up-> gh : push
+pipe -down-> gh : 更新チェック
+pipe -up-> build : 起動
+build -up-> s3 : 静的ファイル更新
+build -up-> l : UpdateFunctionCode
+build -up-> cf : Invalidation
+
+@enduml
