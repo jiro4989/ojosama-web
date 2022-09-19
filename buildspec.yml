@@ -5,6 +5,7 @@ env:
   variables:
     HANDLER: main
     SOURCE_NAME: ojosama.zip
+    FUNCTION_NAME: ojosama
 
 phases:
   install:
@@ -29,10 +30,9 @@ phases:
 
   post_build:
     commands:
-      # FIXME: 一時的なパスなので命名が適当ではない
-      - cd docs/swagger/
+      - pushd ojosama-assets
       - aws s3 cp ./ "s3://${S3_BUCKET_ASSETS}/" --recursive
-      - cd ../../
+      - popd
 
       - aws s3 cp "./${SOURCE_NAME}" "s3://${S3_BUCKET_LAMBDA}/"
-      - aws lambda update-function-code --function-name ojosama --s3-bucket "${S3_BUCKET_LAMBDA}" --s3-key "${SOURCE_NAME}"
+      - aws lambda update-function-code --function-name "${FUNCTION_NAME}" --s3-bucket "${S3_BUCKET_LAMBDA}" --s3-key "${SOURCE_NAME}"
