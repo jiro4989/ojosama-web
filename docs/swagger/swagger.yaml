@@ -1,3 +1,5 @@
+---
+
 openapi: 3.0.2
 
 info:
@@ -5,39 +7,11 @@ info:
   title: Ojosama Web API
 
 servers:
-  - url: "http://localhost:1323/api"
-    description: 開発環境
-  - url: "https://ojosama.herokuapp.com/api"
+  - url: "https://api.ojosama.jiro4989.com"
     description: 本番環境
 
 paths:
-  /ping:
-    get:
-      description: |
-        アプリケーションの稼働状態を返す。
-      responses:
-        "200":
-          description: アプリケーションが稼働している状態
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/responsePing"
-        "500":
-          description: アプリケーションが死んでる状態
-
-  /version:
-    get:
-      description: |
-        アプリケーションの起動時刻等を返す。
-      responses:
-        "200":
-          description: アプリケーションの情報
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/responseVersion"
-
-  /ojosama:
+  /:
     post:
       description: |
         テキストを変換し、壱百満天原サロメお嬢様な言い回しに変換して返却します。
@@ -68,22 +42,6 @@ components:
           example: ハーブです！
       required:
         - Text
-
-    responsePing:
-      properties:
-        Status:
-          description: 稼働状態を返す
-          type: string
-          example: OK
-
-    responseVersion:
-      properties:
-        StartAt:
-          description: アプリケーションの起動時刻を返す
-          type: string
-        Version:
-          description: バージョン情報を返す
-          type: string
 
     responseOjosama:
       properties:
