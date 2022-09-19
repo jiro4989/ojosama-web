@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="ja">
-
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,48 +10,41 @@
   <script src="/assets/js/main.js"></script>
 </head>
 
-
 <body>
   <div class="app">
-
-<header>
-  <h1><a href="/">Ojosama web converter</a></h1>
-  <p>テキストを壱百満天原サロメお嬢様風の口調に変換します。</p>
-</header>
+    <header>
+      <h1><a href="/">Ojosama web converter</a></h1>
+      <p>テキストを壱百満天原サロメお嬢様風の口調に変換します。</p>
+    </header>
 
     <div class="main-area">
-
-<section>
-  <h2>入力</h2>
-  <p>テキストを入力して「変換」ボタンを押すと、「出力」に結果が表示されます。</p>
-  <div>
-    <textarea id="input" name="" placeholder="例: ハーブです！セーブはどこですか？"></textarea>
-  </div>
-  <input id="convert-button" class="button" type="button" value="変換" onclick="convert();">
-</section>
-<section>
-  <h2>出力</h2>
-  <p id="progress">ここに結果が表示されます。</p>
-  <div>
-    <textarea id="output" name="" placeholder="例: おハーブですわ～❗❗セーブはどちらですの？" readonly></textarea>
-  </div>
-  <input id="tweet-button" class="button" disabled type="button" value="ツイート" onclick="tweet();">
-</section>
-
+      <section>
+        <h2>入力</h2>
+        <p>テキストを入力して「変換」ボタンを押すと、「出力」に結果が表示されます。</p>
+        <div>
+          <textarea id="input" name="" placeholder="例: ハーブです！セーブはどこですか？"></textarea>
+        </div>
+        <input id="convert-button" class="button" type="button" value="変換" onclick="convert();">
+      </section>
+      <section>
+        <h2>出力</h2>
+        <p id="progress">ここに結果が表示されます。</p>
+        <div>
+          <textarea id="output" name="" placeholder="例: おハーブですわ～❗❗セーブはどちらですの？" readonly></textarea>
+        </div>
+        <input id="tweet-button" class="button" disabled type="button" value="ツイート" onclick="tweet();">
+      </section>
     </div>
 
-<footer>
-  <span>
-    Copyright (C) 2022 <a href="https://github.com/jiro4989">jiro4989</a> |
-    <a href="/tos">利用規約</a> |
-    Source code :
-    <a href="https://github.com/jiro4989/ojosama-web">Web</a> /
-    <a href="https://github.com/jiro4989/ojosama">Library</a>
-  </span>
-</footer>
-
+    <footer>
+      <span>
+        Copyright (C) 2022 <a href="https://github.com/jiro4989">jiro4989</a> |
+        <a href="/tos">利用規約</a> |
+        Source code :
+        <a href="https://github.com/jiro4989/ojosama-web">Web</a> /
+        <a href="https://github.com/jiro4989/ojosama">Library</a>
+      </span>
+    </footer>
   </div>
 </body>
-
 </html>
-
