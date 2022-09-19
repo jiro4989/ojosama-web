@@ -1,0 +1,30 @@
+---
+version: 0.2
+
+env:
+  variables:
+    HANDLER: main
+    SOURCE_NAME: ojosama.zip
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.18
+
+    commands:
+      - go mod download
+
+  pre_build:
+    commands:
+      - go vet .
+      - go test -cover ./...
+
+  build:
+    commands:
+      - go build -o "${HANDLER}"
+      - zip "${SOURCE_NAME}" "${HANDLER}"
+
+  post_build:
+    commands:
+      - aws s3 cp "./${SOURCE_NAME}" "s3://${S3_BUCKET}/"
+      - aws lambda update-function-code --function-name ojosama --s3-bucket "${S3_BUCKET}" --s3-key "${SOURCE_NAME}"

@@ -1,0 +1,5 @@
+= ojosama-api
+:toc: left
+:sectnums:
+
+テキストを壱百満天原サロメお嬢様風の口調に変換して返す AWS Lambda API です。
