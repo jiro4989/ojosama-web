@@ -88,12 +88,6 @@ API仕様は以下資料を確認してください。
 
 == 開発者向け
 
-=== 前提条件
-
-* Go 1.18.2
-* Ubuntu 22.04 on Docker
-* make
-
 === アプリ構成
 
 バックエンドはGoで実装しています。
@@ -103,40 +97,26 @@ API仕様は以下資料を確認してください。
 
 フロントからはJSでAPIリクエストを出して、結果を貼り付けてるだけです。
 
+それぞれのソースコードは以下のディレクトリで管理します。
+
+[options="header"]
+|=================
+| 役割 | ディレクトリ名
+| バックエンド | ojosama-api
+| フロントエンド | ojosama-assets
+| インフラ | 非公開リポジトリ
+|=================
+
 === インフラ構成
 
-システム構成図は以下のとおりです。
+インフラは AWS を利用しています。
+
+インフラの設定は AWS CDK (TypeScript) でコード管理しています。
+このコードは非公開リポジトリで管理しています。
+
+システム構成は以下のとおりです。
 
 image:./docs/system.png[]
-
-=== 環境構築
-
-Heroku CLIをセットアップします。
-
-[source,bash]
-----
-curl https://cli-assets.heroku.com/install.sh | sh
-----
-
-=== ビルド
-
-以下のコマンドでビルドします。
-単体テストはありません。
-
-[source,bash]
-----
-make
-----
-
-=== 疎通確認
-
-[source,bash]
-----
-make ping
-
-# herokuの方
-make ping ENV=prd
-----
 
 === デプロイ
 
@@ -144,11 +124,6 @@ AWS CodeBuild で更新します。
 CodeBuild でのビルド処理は buildspec.yml に記述します。
 
 main ブランチが更新されると自動でバックエンドとフロントエンドが更新されます。
-
-=== 参考
-
-* https://devcenter.heroku.com/ja/articles/git[Gitを使用したデプロイ]
-* https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml[heroku.ymlを使用してDockerイメージをビルドする]
 
 === Pull Request
 
