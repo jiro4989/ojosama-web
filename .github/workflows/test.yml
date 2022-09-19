@@ -32,6 +32,7 @@ jobs:
       - run: go build
       - run: go install
       - run: go test -cover ./...
+      - run: make -C ojosama-api
 
   docker-build:
     runs-on: ubuntu-latest
