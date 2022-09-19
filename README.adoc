@@ -6,6 +6,21 @@
 
 image:./docs/demo.gif[]
 
+== お知らせ (2022/09/19)
+
+https://blog.heroku.com/next-chapter[Heroku無料プランの廃止]に伴って、サイトのURLを変更しました。
+以下の通り変更します。
+
+* サイトURL
+** 旧 https://ojosama.herokuapp.com
+** 新 https://ojosama.jiro4989.com
+* API URL
+** 旧 https://ojosama.herokuapp.com/api/ojosama
+** 新 https://api.ojosama.jiro4989.com
+
+2022年10月中のどこかのタイミングで旧URLは廃止するので、
+お手数ですがブラウザブックマークや、APIを使っている方はURLを変更してください。
+
 == 概要
 
 テキストを壱百満天原サロメお嬢様風に変換する自前のライブラリ
