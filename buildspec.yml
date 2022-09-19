@@ -30,9 +30,9 @@ phases:
 
   post_build:
     commands:
-      - pushd ojosama-assets
+      - cd ojosama-assets
       - aws s3 cp ./ "s3://${S3_BUCKET_ASSETS}/" --recursive
-      - popd
+      - cd ../
 
       - aws s3 cp "./${SOURCE_NAME}" "s3://${S3_BUCKET_LAMBDA}/"
       - aws lambda update-function-code --function-name "${FUNCTION_NAME}" --s3-bucket "${S3_BUCKET_LAMBDA}" --s3-key "${SOURCE_NAME}"
