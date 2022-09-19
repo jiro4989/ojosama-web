@@ -11,9 +11,9 @@ image:./docs/demo.gif[]
 テキストを壱百満天原サロメお嬢様風に変換する自前のライブラリ
 https://github.com/jiro4989/ojosama[ojosama] を使って作ったWebアプリです。
 
-実行環境はHerokuです。以下URLからアクセスできます。
+実行環境は AWS です。以下URLからアクセスできます。
 
-* https://ojosama.herokuapp.com
+* https://ojosama.jiro4989.com
 
 == 壱百満天原サロメお嬢様について
 
@@ -34,7 +34,7 @@ APIとしても使えるようにしてます。
 
 [source,bash]
 ----
-$ curl -X POST -H 'Content-Type: application/json' -d '{"Text":"これはハーブです！"}' https://ojosama.herokuapp.com/api/ojosama
+$ curl -X POST -H 'Content-Type: application/json' -d '{"Text":"これはハーブです！"}' https://api.ojosama.jiro4989.com
 {"Result":"これはおハーブですわ～！"}
 ----
 
@@ -77,18 +77,24 @@ API仕様は以下資料を確認してください。
 
 * Go 1.18.2
 * Ubuntu 22.04 on Docker
-* https://devcenter.heroku.com/ja/articles/heroku-cli[Heroku CLI]
 * make
 
 === アプリ構成
 
-フロントはGoのhtml/template + HTML + JSだけで書いてます。
+AWS の以下のサービスを組み合わせて実現しています。
+
+* Amazon Route53
+* Amazon CloudFront
+* Amazon S3
+* Amazon API Gateway
+* AWS Lambda
+
+フロントエンドは素のHTMLとJSだけで書いています。
 依存パッケージ管理が面倒なので、npmを導入する予定はありません。
 
-バックエンドはGoの https://echo.labstack.com[echo] を使ってます。
+バックエンドはGoで実装してLambda環境で動作させています。
 
-フロントからJSでAPIサーバに対してAPIリクエストを出して、結果を貼り付けてるだけです。
-なので、前述の通り API としても使える作りになってます。
+フロントからはJSでAPI Gatewayに対してAPIリクエストを出して、結果を貼り付けてるだけです。
 
 === 環境構築
 
@@ -121,12 +127,10 @@ make ping ENV=prd
 
 === デプロイ
 
-[source,bash]
-----
-heroku login
-heroku stack:set container
-make deploy
-----
+AWS CodeBuild で更新します。
+CodeBuild でのビルド処理は buildspec.yml に記述します。
+
+main ブランチが更新されると自動でバックエンドとフロントエンドが更新されます。
 
 === 参考
 
