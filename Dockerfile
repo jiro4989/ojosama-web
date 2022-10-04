@@ -1,4 +1,4 @@
-FROM golang:1.19.1-alpine3.16 AS builder
+FROM golang:1.19.2-alpine3.16 AS builder
 
 RUN apk update \
  && apk upgrade --no-cache
