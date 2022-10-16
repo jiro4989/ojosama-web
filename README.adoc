@@ -6,10 +6,10 @@
 
 image:./docs/demo.gif[]
 
-== お知らせ (2022/09/19)
+== お知らせ (2022/10/16)
 
 https://blog.heroku.com/next-chapter[Heroku無料プランの廃止]に伴って、サイトのURLを変更しました。
-以下の通り変更します。
+変更内容は以下のとおりです。
 
 * サイトURL
 ** 旧 https://ojosama.herokuapp.com
@@ -18,7 +18,7 @@ https://blog.heroku.com/next-chapter[Heroku無料プランの廃止]に伴って
 ** 旧 https://ojosama.herokuapp.com/api/ojosama
 ** 新 https://api.ojosama.jiro4989.com
 
-2022年10月中のどこかのタイミングで旧URLは廃止するので、
+旧サイトURLは2022/10/16に廃止したため、
 お手数ですがブラウザブックマークや、APIを使っている方はURLを変更してください。
 
 == 概要
