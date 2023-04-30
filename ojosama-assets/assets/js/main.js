@@ -1,6 +1,10 @@
 async function convert() {
-  document.getElementById("progress").innerHTML = "処理中";
   const text = document.getElementById("input").value;
+  if (text === "") {
+    return;
+  }
+
+  document.getElementById("progress").innerHTML = "処理中";
   const data = {"Text": text}
   const url = "https://api.ojosama.jiro4989.com/"
   const resp = await fetch(url, {
