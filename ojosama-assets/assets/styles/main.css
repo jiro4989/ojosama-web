@@ -153,10 +153,14 @@ a {
     background-color: #D7A357;
 }
 
-#tweet-button:disabled {
+#convert-button:disabled {
     background-color: #cccccc;
 }
 
 #tweet-button {
     background-color: #00ACEE;
+}
+
+#tweet-button:disabled {
+    background-color: #cccccc;
 }

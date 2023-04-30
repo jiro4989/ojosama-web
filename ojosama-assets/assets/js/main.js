@@ -1,6 +1,10 @@
 async function convert() {
-  document.getElementById("progress").innerHTML = "処理中";
   const text = document.getElementById("input").value;
+  if (text === "") {
+    return;
+  }
+
+  document.getElementById("progress").innerHTML = "処理中";
   const data = {"Text": text}
   const url = "https://api.ojosama.jiro4989.com/"
   const resp = await fetch(url, {
@@ -15,7 +19,7 @@ async function convert() {
   document.getElementById("output").value = result.Result;
   progress.innerHTML = "変換完了！";
 
-  activeTweetButton(result.Result !== "");
+  activeButton("tweet-button", result.Result !== "");
 }
 
 function tweet() {
@@ -28,11 +32,16 @@ function tweet() {
   window.open(tweetURL, "");
 }
 
-function activeTweetButton(active) {
-  const tweetButton = document.getElementById("tweet-button");
+function activeButton(elemId, active) {
+  const button = document.getElementById(elemId);
   if (active === true) {
-    tweetButton.removeAttribute("disabled");
+    button.removeAttribute("disabled");
   } else {
-    tweetButton.setAttribute("disabled");
+    button.setAttribute("disabled", true);
   }
+}
+
+function changeConvertButtonState() {
+  const text = document.getElementById("input").value;
+  activeButton("convert-button", text !== "");
 }
