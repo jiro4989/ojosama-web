@@ -3,7 +3,6 @@ version: 0.2
 
 env:
   variables:
-    HANDLER: main
     SOURCE_NAME: ojosama.zip
     FUNCTION_NAME: ojosama
     GOARCH: amd64
@@ -25,9 +24,8 @@ phases:
 
   build:
     commands:
-      - go build -o "${HANDLER}"
       - go build -tags lambda.norpc -o bootstrap
-      - zip "${SOURCE_NAME}" "${HANDLER}" bootstrap
+      - zip "${SOURCE_NAME}" bootstrap
       - mv "${SOURCE_NAME}"  ../
       - cd ../
 
