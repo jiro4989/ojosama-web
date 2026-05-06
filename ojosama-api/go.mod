@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/aws/aws-lambda-go v1.54.0
 	github.com/jiro4989/ojosama v0.11.0
-	github.com/stretchr/testify v1.8.0
+	github.com/stretchr/testify v1.11.1
 )
 
 require (
